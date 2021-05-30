@@ -12,28 +12,35 @@
     <img src="../static/logo.jpg">
     <h1>GrandPy, raconte moi une histoire</h1>
 </header>
-<div class="dialogue"></div>
-    <section>
-        <form action="data_formulaire.py" method="GET" id="data_formulaire">
+    <section class="dialogue" id="dialogue">
+        <section class="map" id="map">
+            <figure>{{map}}</figure>
+        </section>
+        <section class="history" id="history">
+            <p>
+                {{history}}
+            </p>
+        </section>
+    </section>
+    <section class="form" id="form">
+        <form action="data_form.py" method="GET" id="data_form">
             <fieldset>
                 <legend>Tapez votre question</legend>
                 <div class="text">
-                    <label for="question_utilisateur">votre question</label>
-                    <textarea name="question_utilisateur" id="question_utilisateur" placeholder="votre question" required></textarea>>
+                    <label for="user_question ">votre question</label>
+                    <textarea name="user_question" id="user_question" placeholder="votre question" required accesskey=""></textarea>>
                 </div>
             </fieldset>
-            <fieldset>
-                <legend>Envoyer la question</legend>
-                <div class="button">
-                    <button type="submit">envoyer</button>
-                </div>
-            </fieldset>
-
         </form>
     </section>
 <footer>
     <p>Jean-Baptiste Baillet</p>
-    <a href="https://github.com/jbbaillet85/GrandPyBot-le-papy-robot">Lien Github</a>
+    <a href="https://github.com/jbbaillet85/GrandPyBot-le-papy-robot">
+        <img class="github" id="github" src="../static/logo_github.png" alt="lien vers mon Github"/>
+    </a>
+    <a href="https://www.linkedin.com/in/jean-baptiste-baillet/">
+        <img class="linkedin" id="linkedin" src="../static/logo_linkedin.png" alt="lien vers mon Linkedin" />
+    </a>
 </footer>
 </body>
 </html>

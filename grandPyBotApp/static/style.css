@@ -1,0 +1,20 @@
+@media screen
+{
+    header
+    {
+        display: flex;
+        justify-content: center;
+    }
+    #dialogue
+    {
+        display: flex;
+    }
+
+@media (max-width: 480)
+{
+    legend, label, 
+    {
+        display: none;
+    }
+    
+}

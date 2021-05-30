@@ -1,5 +1,5 @@
 from logging import debug
-from grandPyBotApp.views.py import app
+from grandPyBotApp.views import app
 
-if __name__=="__maine__":
+if __name__=="__main__":
     app.run(debug=True)
