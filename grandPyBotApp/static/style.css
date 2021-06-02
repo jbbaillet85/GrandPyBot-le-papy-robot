@@ -9,6 +9,10 @@
     {
         display: flex;
     }
+    #user_question
+    {
+        display: auto;
+    }
 
 @media (max-width: 480)
 {
