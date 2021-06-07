@@ -13,10 +13,18 @@ def get_user_question(url):
 
 
 def get_user_question1(data):
+    """[summary]
+
+    Args:
+        data ([type]): [description]
+
+    Returns:
+        [type]: [description]
+    """
     request = Request(environ=WSGIEnvironment, populate_request=True, shallow=False)
     if request.method == 'POST':
-        user_question = request.form.get('user_question')
-    return user_question
+        user_question_dialogue = request.form.get('user_question')
+    return user_question_dialogue
 
 def parser_user_question(requete):
     pass

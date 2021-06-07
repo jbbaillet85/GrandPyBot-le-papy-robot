@@ -1,18 +1,22 @@
-from flask import Flask, render_template
-
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
+    """[summary]
+
+    Returns:
+        [type]: [description]
+    """
     return render_template("index.html", methods=['GET', 'POST'],
                            map = "API Google Map",
-                           history = "API de Wikipedia")
-
-
-@app.route('/user_question')
+                           history = "API de Wikipedia",)
 def user_question():
-    return render_template("user_question", user_question = input())
+    if request.method == 'POST':
+        user_question_dialogue = request.form.get('user_question')
+        return user_question_dialogue
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     app.run()
