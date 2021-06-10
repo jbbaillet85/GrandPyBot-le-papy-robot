@@ -1,36 +1,28 @@
-from _typeshed.wsgi import WSGIEnvironment
-import requests
+from stop_word import list_words
 
-from flask.wrappers import Request
-
-
-def get_user_question(url):
-    user_question = input()
-    data = requests.get(url)
-    print(data)
-    return data
-    
-
-
-def get_user_question1(data):
-    """[summary]
-
+def get_user_question(data):
+    """[method retrieving the user's question ]
     Args:
-        data ([type]): [description]
-
+        data ([string]): [user_question]
     Returns:
-        [type]: [description]
+        [string]: [user_question]
     """
-    request = Request(environ=WSGIEnvironment, populate_request=True, shallow=False)
-    if request.method == 'POST':
-        user_question_dialogue = request.form.get('user_question')
-    return user_question_dialogue
+    return data
 
 def parser_user_question(requete):
-    pass
+    """[method allowing to find the key words in character string]
+    Args:
+        requete ([string]): [user_question]
+    Returns:
+        [list]: [keysWords]
+    """
+    for stopWord in list_words:
+        print(stopWord)
+        parser = requete.replace(stopWord, " ")
+        parser = requete.splite()
+    return parser
 
-def found_key_word(parser):
-    pass
 
 if __name__ == "main":
-    get_user_question("http://127.0.0.1:5000/")
+    parser1 = parser_user_question("Salut GrandPy! Est-ce que tu connais l'adresse d'Openclassrooms?")
+    print(parser1)

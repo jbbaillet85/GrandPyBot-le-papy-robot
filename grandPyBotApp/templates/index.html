@@ -2,48 +2,52 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="with=device-with,initial=scale=1">
-    <link rel="stylesheet" href="../static/style.css">
+    <meta name="viewport" content="with=device-with,initial=scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../static/bootstrap-5.0.1-dist/css/bootstrap-grid.min.css"/>
+    <link rel="stylesheet" href="../static/bootstrap-5.0.1-dist/css/bootstrap-grid.rtl.min.css"/>
+    <link rel="stylesheet" href="../static/bootstrap-5.0.1-dist/css/bootstrap-utilities.min.css"/>
+    <link rel="stylesheet" href="../static/bootstrap-5.0.1-dist/css/bootstrap-reboot.min.css"/>
     <script src="../static/script.js" defer></script>
     <title>GrandPy Bot, le papy robot</title>
 </head>
-<body>
-<header>
-    <img src="../static/logo.jpg">
-    <h1>GrandPy, raconte moi une histoire</h1>
+<body class="container-fluid">
+<header class="row">
+    <img src="../static/logo.jpg" class="col-1">
+    <h1 class="col-8 text-center">GrandPy, raconte moi une histoire</h1>
 </header>
-    <section class="dialogue" id="dialogue">
-        <section class="map" id="map">
-            <figure>{{map}}</figure>
+    <section class="row p-3 mb-2 bg-primary text-white" id="dialogue">
+        <section class="col-6" id="map">
+            <figure class="figure-fluid">{{map}}</figure>
         </section>
-        <section class="history" id="history">
+        <section class="col-6" id="history">
             <p>
                 {{history}}
             </p>
         </section>
-        <section class="user_question_dialogue" id="user_question_dialogue">
+        <section class="col-12" id="user_question_dialogue">
             {{user_question_dialogue}}
         </section>
     </section>
-    <section class="form" id="form">
+    <section class="row" id="form">
         <form action="grandPyBotApp\templates\index.html" method="POST" id="data_form">
             <fieldset>
-                <legend>Tapez votre question</legend>
                 <div class="text">
                     <label for="user_question ">votre question</label>
-                    <input type="text" name="user_question" id="user_question" placeholder="votre question" autofocus required />
+                    <input type="text" name="user_question" id="user_question" class="col-12" placeholder="Tapez votre question" autofocus required />
                 </div>
             </fieldset>
         </form>
     </section>
-<footer>
-    <p>Jean-Baptiste Baillet</p>
+<footer class="row">
+    <adress class="col-12">Jean-Baptiste Baillet</adress>
+    <section>
     <a href="https://github.com/jbbaillet85/GrandPyBot-le-papy-robot">
-        <img class="github" id="github" src="../static/logo_github.png" alt="lien vers mon Github"/>
+        <img class="col-1" id="github" src="../static/logo_github.png" alt="lien vers mon Github"/>
     </a>
     <a href="https://www.linkedin.com/in/jean-baptiste-baillet/">
-        <img class="linkedin" id="linkedin" src="../static/logo_linkedin.png" alt="lien vers mon Linkedin" />
+        <img class="col-1" id="linkedin" src="../static/logo_linkedin.png" alt="lien vers mon Linkedin" />
     </a>
+    </section>
 </footer>
 </body>
 </html>
