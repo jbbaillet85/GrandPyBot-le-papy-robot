@@ -1,34 +1,59 @@
 <!doctype html>
 <html lang="fr">
-<head>
+  <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="with=device-with,initial=scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="../static/bootstrap-5.0.1-dist/css/bootstrap-grid.min.css"/>
-    <link rel="stylesheet" href="../static/bootstrap-5.0.1-dist/css/bootstrap-grid.rtl.min.css"/>
-    <link rel="stylesheet" href="../static/bootstrap-5.0.1-dist/css/bootstrap-utilities.min.css"/>
-    <link rel="stylesheet" href="../static/bootstrap-5.0.1-dist/css/bootstrap-reboot.min.css"/>
-    <script src="../static/script.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Jean-Baptiste">
     <title>GrandPy Bot, le papy robot</title>
-</head>
-<body class="container-fluid">
-<header class="row">
-    <img src="../static/logo.jpg" class="col-1">
-    <h1 class="col-8 text-center">GrandPy, raconte moi une histoire</h1>
-</header>
-    <section class="row p-3 mb-2 bg-primary text-white" id="dialogue">
-        <section class="col-6" id="map">
-            <figure class="figure-fluid">{{map}}</figure>
-        </section>
-        <section class="col-6" id="history">
-            <p>
-                {{history}}
-            </p>
-        </section>
-        <section class="col-12" id="user_question_dialogue">
-            {{user_question_dialogue}}
-        </section>
-    </section>
-    <section class="row" id="form">
+    <link rel="stylesheet" href="../static/bootstrap-5.0.1-dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../static/bootstrap-5.0.1-dist/css/bootstrap.min.css"/>
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+  </head>
+  <body>
+    
+<main>
+  <div class="container py-4">
+    <header class="pb-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+        <img src="../static/papy.png" class="col-1">
+        <span class="fs-4">GrandPy, raconte moi une histoire</span>
+      </a>
+    </header>
+
+    <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">Boite de dialogue</h1>
+                <section class="col-6" id="map">
+                    <figure class="figure-fluid">{{map}}</figure>
+                </section>
+                <section class="col-6" id="history">
+                    <p>
+                        {{history}}
+                    </p>
+                </section>
+                <section class="col-12" id="user_question_dialogue">
+                    {{user_question_dialogue}}
+                </section>
+      </div>
+      <section class="row" id="form">
         <form action="grandPyBotApp\templates\index.html" method="POST" id="data_form">
             <fieldset>
                 <div class="text">
@@ -38,16 +63,23 @@
             </fieldset>
         </form>
     </section>
-<footer class="row">
-    <adress class="col-12">Jean-Baptiste Baillet</adress>
-    <section>
-    <a href="https://github.com/jbbaillet85/GrandPyBot-le-papy-robot">
-        <img class="col-1" id="github" src="../static/logo_github.png" alt="lien vers mon Github"/>
-    </a>
-    <a href="https://www.linkedin.com/in/jean-baptiste-baillet/">
-        <img class="col-1" id="linkedin" src="../static/logo_linkedin.png" alt="lien vers mon Linkedin" />
-    </a>
-    </section>
-</footer>
-</body>
+
+    </div>
+    <footer class="pt-3 mt-4 text-muted border-top">
+        <adress class="col-12">Jean-Baptiste Baillet</adress>
+        <section>
+        <a href="https://github.com/jbbaillet85/GrandPyBot-le-papy-robot">
+            <img class="col-1" id="github" src="../static/logo_github.png" alt="lien vers mon Github"/>
+        </a>
+        <a href="https://www.linkedin.com/in/jean-baptiste-baillet/">
+            <img class="col-1" id="linkedin" src="../static/logo_linkedin.png" alt="lien vers mon Linkedin" />
+        </a>
+        </section>
+    </footer>
+  </div>
+</main>
+
+
+    
+  </body>
 </html>
