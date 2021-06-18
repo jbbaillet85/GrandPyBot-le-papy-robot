@@ -6,7 +6,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['get', 'post'])
 def index():
     """[summary]
 
@@ -15,11 +15,8 @@ def index():
     """
     return render_template("index.html", methods=['GET', 'POST'],
                            map = "API Google Map",
-                           history = "API de Wikipedia",)
-def user_question():
-    if request.method == 'POST':
-        user_question_dialogue = request.form.get('user_question')
-        return user_question_dialogue
+                           history = "API de Wikipedia",
+                           user_question_dialogue = request.args.get("user_question"))
 
 
 if __name__ == "__main__":
