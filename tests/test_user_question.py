@@ -1,8 +1,5 @@
-from grandPyBotApp.views import user_question
 #! /usr/bin/env python3
 # coding utf-8
-
-import pytest
 
 from grandPyBotApp.user_question import UserQuestion
 

@@ -4,7 +4,11 @@
 
 from flask import Flask, render_template, request
 
+from user_question import UserQuestion
+
 app = Flask(__name__)
+
+adress = "12 rue de paradis"
 
 @app.route('/', methods=['get', 'post'])
 def index():
@@ -13,10 +17,12 @@ def index():
     Returns:
         [type]: [description]
     """
-    return render_template("index.html", methods=['GET', 'POST'],
-                           map = "API Google Map",
+    user_question_form = UserQuestion(str(request.args.get("user_question")))
+    return render_template("index.html",
+                           map = "map",
+                           adress = f"L'adresse est {adress}",
                            history = "API de Wikipedia",
-                           user_question_dialogue = request.args.get("user_question"))
+                           user_question_dialogue = user_question_form.form)
 
 
 if __name__ == "__main__":

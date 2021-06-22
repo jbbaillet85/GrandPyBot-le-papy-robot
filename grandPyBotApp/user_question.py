@@ -31,10 +31,6 @@ class UserQuestion:
         pars = " ".join(pars)
         return pars
 
-parser1 = UserQuestion("Salut GrandPy! Est-ce que tu connais l'adresse d'Openclassrooms?")
-print(parser1.form)
-print(parser1.pars)
-
 if __name__ == "main":
     parser1 = UserQuestion("Salut GrandPy! Est-ce que tu connais l'adresse d'Openclassrooms?")
     print(parser1.form)
