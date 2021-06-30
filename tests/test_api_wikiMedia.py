@@ -5,15 +5,14 @@ import requests
 
 from grandPyBotApp.api_wikiMedia import ApiWikiMedia
 
-openclassrooms = ApiWikiMedia()
+rennes = ApiWikiMedia("Paris")
 
 
 def test_ApiWikipedia(monkeypatch):
-    results = ""
-    
+    results = "Paris (/pa', 'ʁi/) est la commune la plus peuplée et la capitale de la France"
     def mockApiWikipedia():
         return results
 
     monkeypatch.setattr(requests, 'get', mockApiWikipedia)
  
-    assert openclassrooms.content == ''
+    assert rennes.content == "Paris (/pa', 'ʁi/) est la commune la plus peuplée et la capitale de la France"

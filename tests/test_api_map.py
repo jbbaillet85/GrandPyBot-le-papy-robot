@@ -31,7 +31,7 @@ def test_ApiMap(monkeypatch):
  
     assert apiMap.adress == '10 Quai de la Charente, 75019 Paris, France'
     assert apiMap.gps == "48.8975156, 2.3833993"
-    assert apiMap.ville == "Paris"
+    assert apiMap.city == "Paris"
 
 
 def test_api_keyWord():
