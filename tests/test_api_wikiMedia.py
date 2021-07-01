@@ -14,5 +14,6 @@ def test_ApiWikipedia(monkeypatch):
         return results
 
     monkeypatch.setattr(requests, 'get', mockApiWikipedia)
- 
+    
+    assert rennes.city == "Paris"
     assert rennes.content == "Paris (/pa', 'ʁi/) est la commune la plus peuplée et la capitale de la France"

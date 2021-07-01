@@ -23,10 +23,10 @@ def index():
     adress = ApiMap(user_question_form.pars)
     history = ApiWikiMedia(adress.city)
     return render_template("index.html",
-                           map = adress.imgMap,
-                           adress = f"L'adresse de {user_question_form.pars} est {adress.adress}",
-                           history = f"Au fait tu savais que {history.content}",
-                           user_question_dialogue = user_question_form.form)
+                            map = adress.imgMap,
+                            adress = f"L'adresse de {user_question_form.pars} est {adress.adress}",
+                            history = f"Au fait tu savais que {history.content}",
+                            user_question_dialogue = user_question_form.form)
 
 
 if __name__ == "__main__":

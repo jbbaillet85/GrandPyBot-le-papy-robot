@@ -36,4 +36,4 @@ class ApiMap:
 
 if __name__== "__main__":
     apiMap1 = ApiMap("Openclassrooms")
-    print(apiMap1.ville)
+    print(apiMap1.city)
