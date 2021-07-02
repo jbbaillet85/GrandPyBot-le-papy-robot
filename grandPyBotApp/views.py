@@ -10,8 +10,6 @@ from api_wikiMedia import ApiWikiMedia
 
 app = Flask(__name__)
 
-adress = "12 rue de paradis"
-
 @app.route('/', methods=['get', 'post'])
 def index():
     """[summary]
@@ -25,7 +23,7 @@ def index():
     return render_template("index.html",
                             map = adress.imgMap,
                             adress = f"L'adresse de {user_question_form.pars} est {adress.adress}",
-                            history = f"Au fait tu savais que {history.content}",
+                            history = f"Au fait tu savais que {history.history}",
                             user_question_dialogue = user_question_form.form)
 
 
