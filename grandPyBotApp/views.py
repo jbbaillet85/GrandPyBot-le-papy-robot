@@ -1,12 +1,11 @@
-
 #! /usr/bin/env python3
 # coding utf-8
 
 from flask import Flask, render_template, request
 
-from user_question import UserQuestion
-from api_map import ApiMap
-from api_wikiMedia import ApiWikiMedia
+from grandPyBotApp.user_question import UserQuestion
+from grandPyBotApp.api_map import ApiMap
+from grandPyBotApp.api_wikiMedia import ApiWikiMedia
 
 app = Flask(__name__)
 

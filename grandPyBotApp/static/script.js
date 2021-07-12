@@ -1,27 +1,18 @@
-console.log("teste JS")
+document.getElementById("user_question").addEventListener("submit", function(e){
+    e.preventDefault();
 
-var user_question = document.getElementById("user_question");
+    var data = new FormData(document)
+    console.log(data)
 
-user_question.addEventListener("change", senddata('GET', 'http://127.0.0.1:5000/','user_question=ou+est+openclassrooms'))
+    var httpRequest = new XMLHttpRequest();
 
-
-senddata = function (method, url, params) {
-    let httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = function() {
+        console.log(httpRequest)
         if (httpRequest.readyState === XMLHttpRequest.DONE) {
-            if (httpRequest.status === 200) {
-                console.log(httpRequest.responseText);
-            } else {
-                // il y a eu un problème avec la requête,
-                // par exemple la réponse peut être un code 404 (Non trouvée)
-                // ou 500 (Erreur interne au serveur)
-            }
-        } else {
-            // pas encore prête
-        }
-        // instructions de traitement de la réponse
-    };
-    httpRequest.open(method, url + "?" + params, true);
-    httpRequest.setRequestHeader("Content-Type", "application/json");
-    httpRequest.send();
-}
+            if (httpRequest.status === 200) {console.log(httpRequest.response);}
+            else{alert("Une erreure est surevenus")}
+
+    httpRequest.open('POST', "../view.py", true);
+    //httpRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    httpRequest.send(data);
+    return false}}});

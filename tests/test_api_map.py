@@ -30,6 +30,7 @@ def test_ApiMap(monkeypatch):
     monkeypatch.setattr(requests, 'get', mockApiMap)
  
     assert apiMap.adress == '10 Quai de la Charente, 75019 Paris, France'
+    assert apiMap.adressMap == "10+Quai+de+la+Charente,+75019+Paris,+France"
     assert apiMap.gps == "48.8975156, 2.3833993"
     assert apiMap.city == "Paris"
 
