@@ -7,6 +7,7 @@
     <meta name="author" content="Jean-Baptiste">
     <title>GrandPy Bot, le papy robot</title>
     <link rel="stylesheet" href="../static/bootstrap-5.0.1-dist/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="../static/script.js" defer></script>
 
     <style>
@@ -46,14 +47,14 @@
                   <li >
                 <section class="col-6" id="map">
                     <p>{{adress}}</p>
-                    <img src={{map}} class="img-fluid" alt="image de la carte de l'adresse">/>
+                    <img src={{map}} class="img-fluid" alt="image de la carte de l'adresse"/>
                 </section>
                 <section class="col-6" id="history">
                     <p>
                         {{history}}
                     </p>
                 </section>
-                <section class="col-12" id="user_question_dialogue">
+                <section class="col-12" id="userQuestionDialogue">
                     {{user_question_dialogue}}
                 </section>
                 {% endif %}
@@ -61,11 +62,11 @@
               </ul>
       </div>
       <section class="row" id="form">
-        <form action="/" method="GET" id="data_form">
+        <form action="/" method="GET" id="dataForm">
             <fieldset>
                 <div class="text">
-                    <label for="user_question ">votre question</label>
-                    <input type="text" name="user_question" id="user_question" class="col-12" placeholder="Tapez votre question" autofocus required />
+                    <label for="userQuestion ">votre question</label>
+                    <input type="text" name="userQuestion" id="userQuestion" class="col-12" placeholder="Tapez votre question" autofocus required />
                 </div>
             </fieldset>
         </form>
@@ -84,9 +85,6 @@
         </section>
     </footer>
   </div>
-</main>
-
-
-    
+</main>    
   </body>
 </html>
