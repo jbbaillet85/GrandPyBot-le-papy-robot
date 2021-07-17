@@ -14,7 +14,10 @@ $(document).ready(function () {
                 dialogue.appendTo('.dialogue');
             })
             .fail(function (jqxhr) {
-                alert(jqxhr.responseText)
+                console.log(jqxhr.responseText)
+                dialogue = $('.dialogue').clone();
+                dialogue.find('.dialogue').html("Je n'ais pas compris ce que tu as dit, je dois etre fatigué");
+                dialogue.appendTo('.dialogue');
             });
         event.preventDefault();
     });
