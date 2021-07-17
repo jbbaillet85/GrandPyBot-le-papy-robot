@@ -10,7 +10,7 @@ openclassrooms = ApiWikiMedia("Paris")
 
 def test_ApiWikipedia(monkeypatch):
     results = "<Response [200]>"
-    
+
     def mockApiWikipedia(requests):
         return results
 
