@@ -29,11 +29,11 @@ def data():
     """
     user_question_form = UserQuestion(str(request.args.get("userQuestion")))
     adress = ApiMap(user_question_form.pars)
-    history = ApiWikiMedia(adress.city)
+    history = ApiWikiMedia(user_question_form.pars)
     return render_template("data.html", map=adress.imgMap,
-                           adress=f"L'adresse de {user_question_form.pars} est {adress.adress}",
-                           history=f"Au fait tu savais que {history.history}",
-                           user_question_dialogue=user_question_form.form,)
+                           adress = adress.adress,
+                           history = f"{history.history}",
+                           user_question_dialogue = user_question_form.form,)
 
 
 if __name__ == "__main__":

@@ -15,6 +15,6 @@ def test_ApiWikipedia(monkeypatch):
         return results
 
     monkeypatch.setattr(requests, 'get', mockApiWikipedia)
-    assert openclassrooms.city == "Paris"
+    assert openclassrooms.keyWord == "Paris"
     assert openclassrooms.url == "https://fr.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=Paris"
-    assert openclassrooms.history == "Paris (/pa', 'ʁi/) est la commune la plus peuplée et la capitale de la France"
+    assert openclassrooms.history == """Tu savais que ... Paris (/pa', 'ʁi/) est la commune la plus peuplée et la capitale de la France', "\nElle se situe au cœur d'un vaste bassin sédimentaire aux sols fertiles et au climat tempéré, le bassin parisien, sur une boucle de la Seine, entre les confluents de celle-ci avec la Marne et l'Oise"""
