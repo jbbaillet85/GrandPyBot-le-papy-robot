@@ -16,7 +16,7 @@ class ApiWikiMedia:
         pageid = str(history["query"]["pages"])
         pageid = pageid.split("{")[1][1:-3]
         history = str(history["query"]["pages"][pageid]["extract"])
-        history = str(history.split(".")[0:4])[2:-2]
+        history = str(history.split(".")[0:2])[2:-2]
         return history
 
 
