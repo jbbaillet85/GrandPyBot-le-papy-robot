@@ -1,5 +1,6 @@
 $(document).ready(function () {
     $('form').on('submit', function (event) {
+        event.preventDefault();
         $.ajax({
                 data: {
                     userQuestion: $('#userQuestion').val(),
@@ -8,17 +9,16 @@ $(document).ready(function () {
                 url: '/data'
             })
             .done(function (data) {
-                $('#data').text(data.output).show();
-                dialogue = $('.dialogue').clone();
-                dialogue.find('.dialogue').html(data);
-                dialogue.appendTo('.dialogue');
+                dialogue = $("<section></section>");
+                dialogue.addClass("col-12 dialogue");
+                dialogue.html(data);
+                dialogue.appendTo("#all-responses");
             })
-            .fail(function (jqxhr) {
-                console.log(jqxhr.responseText)
-                dialogue = $('.dialogue').clone();
-                dialogue.find('.dialogue').html("Je n'ais pas compris ce que tu as dit, je dois etre fatigué");
-                dialogue.appendTo('.dialogue');
+            .fail(function () {
+                dialogue = $("<section></section>");
+                dialogue.addClass("col-12 dialogue");
+                dialogue.html("Je n'ais pas compris ce que tu as dis, je dois etre fatigué.\nPeux tu reformuler?");
+                dialogue.appendTo("#all-reponses");
             });
-        event.preventDefault();
     });
 });
