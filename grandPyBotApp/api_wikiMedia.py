@@ -9,7 +9,10 @@ class ApiWikiMedia:
         """This class retrieves data from the wikipedia API
 
         Args:
-            keyWord (str): the keyword is the incoming data for the wikipedia API 
+            keyWord (str): the keyword is the incoming data for the wikipedia API.
+        
+        Returns:
+            The api_wikipedia class returns a little story or an error message if the input data is incorrect. 
         """
         self.keyWord = keyWord
         self.url = f"https://fr.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles={self.keyWord}"

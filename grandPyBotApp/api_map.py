@@ -8,13 +8,15 @@ apiKeyMap = "AIzaSyCXkeG_ML2KTexqdiATu3n3j1DLIM2_njA"
 
 class ApiMap:
     def __init__(self, keyWord: str) -> str:
-        """[summary]
-
+        """
+        The api_map class retrieves the address and a geographic map linked to the keyWord. 
+        
         Args:
-            keyWord (str): [description]
+            keyWord (str): keyword is the data of the form that was parsed by the user_question class.
 
         Returns:
-            str: [description]
+            str: the class returns the address and a geographic map or image of GrandPy with an error message. 
+
         """
         self.keyWord = keyWord
         self.urlMap = f"https://maps.googleapis.com/maps/api/geocode/json?address={self.keyWord}&key={apiKeyMap}"

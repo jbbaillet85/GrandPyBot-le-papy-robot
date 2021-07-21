@@ -8,6 +8,14 @@ list_caracteres = ["'", "?", "!", "-"]
 
 class UserQuestion:
     def __init__(self, data: str) -> str:
+        """[summary]
+
+        Args:
+            data (str): [description]
+
+        Returns:
+            str: [description]
+        """
         self.form = data
         self.pars = self.parser_user_question()
 
