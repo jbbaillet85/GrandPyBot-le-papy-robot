@@ -29,7 +29,7 @@ class ApiMap:
             if content['results'] != []:
                 return content["results"][0]['formatted_address']
         else:
-            return f"{self.keyWord} ? Je n'ai pas compris ce que tu m'as dis"
+            return "Je n'ai pas compris ce que tu m'as dis mon poussin"
 
     def get_adress_map(self):
         adressMap = str(self.adress)
@@ -37,10 +37,12 @@ class ApiMap:
         return adressMap
 
     def get_imgMap(self):
-        if self.adressMap:
+        print(self.adressMap)
+        if self.adressMap != "Je n'ai pas compris ce que tu m'as dis mon poussin".replace(" ", "+"):
             return f"""https://maps.googleapis.com/maps/api/staticmap?center={self.adressMap}&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284&key={apiKeyMap}"""
         else:
-            return "grandPyBotApp/static/papy.png"
+            return "static/papy.png"
+
 
 if __name__ == "__main__":
     apiMap1 = ApiMap("vivement les vacances")
