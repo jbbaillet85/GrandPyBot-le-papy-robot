@@ -28,8 +28,11 @@ class ApiWikiMedia:
                 pageid = pageid.split("{")[1][1:-3]
                 if int(pageid) != -1:
                     history = str(history["query"]["pages"][pageid]["extract"])
-                    history = str(history.split(".")[0:3])[2:-2]
-                    return f"Tu savais que ... {history}"
+                    if history != "":
+                        history = str(history.split(".")[0:2])[2:-2]
+                        return f"Tu savais que ... {history}"
+                    else:
+                        return f"Je ne connais pas {self.keyWord} mon poussin, tu peux m'en dire plus"
                 else:
                     return f"Je ne connais pas {self.keyWord} mon poussin, tu peux m'en dire plus"
         else:
@@ -37,5 +40,6 @@ class ApiWikiMedia:
 
 
 if __name__ == "__main__":
-    rennes = ApiWikiMedia("openclassrooms")
+    rennes = ApiWikiMedia("spiderman")
+    print(rennes.url)
     print(rennes.history)

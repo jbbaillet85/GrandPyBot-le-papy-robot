@@ -25,14 +25,16 @@ class ApiMap:
         self.imgMap = self.get_imgMap()
 
     def get_adress(self):
-        response = requests.get(self.urlMap)
-        if response.status_code == 200:
-            content = response.json()
-            print(content)
-            if content['results'] != []:
-                return content["results"][0]['formatted_address']
-            else:
-                return "Je n'ai pas compris ce que tu m'as dis mon poussin"
+        if self.keyWord != "":
+            response = requests.get(self.urlMap)
+            if response.status_code == 200:
+                content = response.json()
+                if content['results'] != []:
+                    return content["results"][0]['formatted_address']
+                else:
+                    return "Je n'ai pas compris ce que tu m'as dis mon poussin"
+        else:
+            return "Je n'ai pas compris ce que tu m'as dis mon poussin"
 
     def get_adress_map(self):
         adressMap = str(self.adress)
@@ -48,7 +50,7 @@ class ApiMap:
 
 
 if __name__ == "__main__":
-    apiMap1 = ApiMap("inventé spiderman")
+    apiMap1 = ApiMap("")
     print(apiMap1.keyWord)
     print(apiMap1.adress)
     print(apiMap1.adressMap)
