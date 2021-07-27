@@ -24,7 +24,6 @@ class ApiWikiMedia:
             if content.status_code == 200:
                 history = content.json()
                 pageid = str(history["query"]["pages"])
-                print(pageid)
                 pageid = pageid.split("{")[1][1:-3]
                 if int(pageid) != -1:
                     history = str(history["query"]["pages"][pageid]["extract"])
@@ -40,6 +39,6 @@ class ApiWikiMedia:
 
 
 if __name__ == "__main__":
-    rennes = ApiWikiMedia("spiderman")
+    rennes = ApiWikiMedia("Paris")
     print(rennes.url)
     print(rennes.history)

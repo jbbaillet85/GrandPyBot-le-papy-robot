@@ -33,6 +33,7 @@ def data():
     return render_template("data.html", map=adress.imgMap,
                            adress = adress.adress,
                            history = f"{history.history}",
+                           keyWord = history.keyWord,
                            user_question_dialogue = user_question_form.form,)
 
 
