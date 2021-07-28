@@ -3,7 +3,8 @@
 
 import requests
 
-apiKeyMap = "AIzaSyCXkeG_ML2KTexqdiATu3n3j1DLIM2_njA"
+from config import apiKeyMap
+
 
 
 class ApiMap:
