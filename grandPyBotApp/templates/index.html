@@ -33,16 +33,17 @@
     <div class="container py-4">
       <header class="pb-3 mb-4 border-bottom">
         <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
-          <img src="../static/papy.png" class="col-1">
+          <img src="../static/papy.png" alt="logo de GrandPy" class="col-1">
           <span class="fs-4">GrandPy, raconte moi une histoire</span>
         </a>
       </header>
 
       <div class="p-5 mb-4 bg-light rounded-3">
         <div class="container-fluid py-5" id="all-responses"></div>
-        <div id="wait" style="display:none;width:69px;height:89px;border:1px solid black;position:absolute;top:50%;left:50%;padding:2px;"><img src='../static/Spinner-1s-200px.gif' width="64" height="64" /><br>GrandPy réfléchit...</div>
+        <div id="wait" style="display:none;width:69px;height:89px;border:1px solid black;position:absolute;top:50%;left:50%;padding:2px;"><img src='../static/Spinner-1s-200px.gif' width="64" height="64" alt="loader GrandPy réfléchit"/><br>GrandPy réfléchit...</div>
 
         <section class="row" id="form">
+          <h2>Quel lieux cherche tu mon poussin?</h2>
           <form action="/" method="GET" id="dataForm">
             <fieldset>
               <div class="text">
@@ -55,15 +56,15 @@
 
       </div>
       <footer class="pt-3 mt-4 text-muted border-top">
-        <adress class="col-12">Jean-Baptiste Baillet</adress>
-        <section>
+        <p class="col-12">Jean-Baptiste Baillet</p>
+        <p>
           <a href="https://github.com/jbbaillet85/GrandPyBot-le-papy-robot">
             <img class="col-1" id="github" src="../static/logo_github.png" alt="lien vers mon Github" />
           </a>
           <a href="https://www.linkedin.com/in/jean-baptiste-baillet/">
             <img class="col-1" id="linkedin" src="../static/logo_linkedin.png" alt="lien vers mon Linkedin" />
           </a>
-        </section>
+        </p>
       </footer>
     </div>
   </main>
